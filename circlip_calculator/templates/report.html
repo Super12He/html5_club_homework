@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+<!--{% block css %}-->
+<!--<link href="/static/css/main.css" rel="stylesheet" type="text/css" rel="stylesheet">-->
+<!--{% endblock %}-->
+{% block style %}
+<!-- DataTables CSS -->
+<!--<link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">-->
+<!--<link href="/static/vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">-->
+<!--<link href="/static/css/main.css" rel="stylesheet" type="text/css" rel="stylesheet">-->
+{% endblock %}
+
+{% block content %}
+<div id="page-wrapper" style="min-height: 1088px">
+    <header class="major-user">
+        <span class="date" style="font-size:10pt">{{database.datetime}}</span>
+        <h2>{{database.project}} {{database.phase}} {{database.analysis_objects}} 2D Cross Section Sealing Analysis - V{{database.version}}</h2>
+    </header>
+    <hr style="border:1px double #eeeeee"/>
+    <section>
+        <header class="major">
+            <h2><strong>Summary Table</strong></h2>
+        </header>
+        <div class="row">
+            <table width="100%" class="table text-center table-striped table-hover table-bordered" data-toggle="table">
+                <thead>
+                <tr>
+                    <td rowspan="2" style="vertical-align:middle"><b>Temperature</b></td>
+                    {% for case in para.keys %}
+                    <td colspan="3"><b>{{ case }}</b></td>
+                    {% endfor %}
+                </tr>
+                <tr>
+                    {% for case in para.keys %}
+                    <td>Max von Misis Stress(MPa)</td>
+                    <td>Max NE</td>
+                    <td>Contact Length (mm)</td>
+                    {% endfor %}
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Room Temperature</td>
+                    {% for case, value in para.items %}
+                    <td>{{ value.max_mises }}</td>
+                    <td>{{ value.max_ne }}</td>
+                    <td>{{ value.contact_length }}</td>
+                    {% endfor %}
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+	<hr style="border:1px double #e8e8e8"/>
+        {% for case, value in para.items %}
+
+			<header class="major">
+				<h2><strong>{{case}} @ Room Temperature</strong></h2>
+			</header>
+			<div class="row">
+                <div class="col-lg-12">
+                    <div class="col-lg-6">
+                        <img src="/{{root_url}}/Picture/{{ case }}_CPRESS.png" style="width:811px" alt="LMC CPRESS">
+                        <header class="major">
+                            <h3> CPress</h3>
+                            <p style="color:#7f888f#; font-size:11pt">The max contact pressure is {{value.max_mises}}MPa</p>
+                        </header>
+                    </div>
+                    <div class="col-lg-6">
+                        <img src="/{{root_url}}/Picture/{{ case }}_NE.png" style="width:811px" alt="LMC NE">
+                        <header class="major">
+                            <h3> NE</h3>
+                            <p style="color:#7f888f#; font-size:11pt">The max NE is {{value.max_ne}}</p>
+                        </header>
+                    </div>
+                </div>
+            </div>
+        <hr style="border:1px dashed #e8e8e8"/>
+        {% endfor %}
+
+
+</div>
+{% endblock %}

@@ -1,0 +1,201 @@
+{% extends 'base.html' %}
+
+{% block style %}
+<link href="/static/vendor/bootstrap/css/bootstrap.min.user.css" rel="stylesheet">
+{% endblock %}
+{% block content %}
+    <!--<div id="page-wrapper">-->
+        <header id="header">
+            <p>
+                <strong>Created</strong> by He Lvyang
+            </p>
+        </header>
+        <h1>Gasket Section Type 1</h1>
+        <form action="#" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="row">
+                <!--<header>-->
+                    <!--<h2>Project Information</h2>-->
+                <!--</header>-->
+                <div class="col-lg-12">
+                    <!--<div class="panel panel-default">-->
+                    <hr style="border:1px double #e8e8e8"/>
+                        <div class="panel-heading">
+                            Project Information
+                        </div>
+                    <hr style="border:1px double #e8e8e8"/>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label>Project</label>
+                                        {{ project_form.project }}
+                                        <p class="help-block">Input project name, such as CVG, K228...</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Phase</label>
+                                        {{ project_form.phase }}
+                                        <p class="help-block">If not include in select, please choose OTHER</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label>Analysis Objects</label>
+                                        {{ project_form.analysis_objects }}
+                                        <p class="help-block">Input analysis objects, such as block, battery package...</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Version</label>
+                                        <select name="version" class="form-control" id="id_version">
+                                          <option value=1 selected>1</option>
+                                          <option value=2>2</option>
+                                          <option value=3>3</option>
+                                          <option value=4>4</option>
+                                          <option value=5>5</option>
+                                          <option value=6>6</option>
+                                          <option value=7>7</option>
+                                          <option value=8>8</option>
+                                          <option value=9>9</option>
+                                          <option value=10>10</option>
+                                        </select>
+                                            <!--{{ project_form.version }}-->
+                                        <!--<input type="text" class="form-control" name="version" id="id_version" required maxlength="50" />-->
+                                        <p class="help-block">Please input version</p>
+                                        <!--{{ project_form.version}}-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <!--</div>-->
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <hr style="border:1px double #e8e8e8"/>
+                        <div class="panel-heading">
+                            Material and Property
+                        </div>
+                        <hr style="border:1px double #e8e8e8"/>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label>Material</label>
+                                        {{ type_form.para_material }}
+                                        <p class="help-block">Select gasket's material, if not exists, please CONTACT He Lvyang</p>
+                                    </div>
+                                </div>
+                                <!--<div class="col-lg-6">-->
+                                    <!--<div class="form-group">-->
+                                        <!--<label>Property</label>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <hr style="border:1px double #e8e8e8"/>
+                        <div class="panel-heading">
+                            Geometroy Parameters
+                        </div>
+                        <hr style="border:1px double #e8e8e8"/>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <label>Parameter 1</label>
+                                    <div class="form-group input-group">
+                                        {{ type_form.para_r1 }}
+                                        <span class="input-group-addon">±</span>
+                                        {{ type_form.para_r1_tolerance }}
+                                    </div>
+                                    <p class="help-block">Input the value of radius No.1</p>
+                                    <label>Parameter 2</label>
+                                    <div class="form-group input-group">
+                                        {{ type_form.para_r2 }}
+                                        <span class="input-group-addon">±</span>
+                                        {{ type_form.para_r2_tolerance }}
+                                    </div>
+                                    <p class="help-block">Input the value of radius No.2</p>
+                                    <label>Parameter 3</label>
+                                    <div class="form-group input-group">
+                                        {{ type_form.para_r3 }}
+                                        <span class="input-group-addon">±</span>
+                                        {{ type_form.para_r3_tolerance }}
+                                    </div>
+                                    <p class="help-block">Input the value of radius No.3</p>
+                                    <label>Parameter 4</label>
+                                    <div class="form-group input-group">
+                                        {{ type_form.para_degree }}
+                                        <span class="input-group-addon">±</span>
+                                        {{ type_form.para_degree_tolerance }}
+                                    </div>
+                                    <p class="help-block">Input the value of angle No.1 (units degree)</p>
+                                    <label>Parameter 5</label>
+                                    <div class="form-group input-group">
+                                        {{ type_form.para_width }}
+                                        <span class="input-group-addon">±</span>
+                                        {{ type_form.para_width_tolerance }}
+                                    </div>
+                                    <p class="help-block">Input the value of width No.1</p>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label>Parameter 6</label>
+                                    <div class="form-group input-group">
+                                        {{ type_form.para_l1 }}
+                                        <span class="input-group-addon">±</span>
+                                        {{ type_form.para_l1_tolerance }}
+                                    </div>
+                                    <p class="help-block">Input the value of height No.1</p>
+                                    <label>Parameter 7</label>
+                                    <div class="form-group input-group">
+                                        {{ type_form.para_l2 }}
+                                        <span class="input-group-addon">±</span>
+                                        {{ type_form.para_l2_tolerance }}
+                                    </div>
+                                    <p class="help-block">Input the value of height No.2</p>
+                                    <label>Parameter 8</label>
+                                    <div class="form-group input-group">
+                                        {{ type_form.para_height }}
+                                        <span class="input-group-addon">±</span>
+                                        {{ type_form.para_height_tolerance }}
+                                    </div>
+                                    <p class="help-block">Input the value of height No.3</p>
+                                    <label>Parameter 9</label>
+                                    <div class="form-group input-group">
+                                        {{ type_form.para_groove_width }}
+                                        <span class="input-group-addon">±</span>
+                                        {{ type_form.para_groove_width_tolerance }}
+                                    </div>
+                                    <p class="help-block">Input the value of groove width</p>
+                                    <label>Parameter 10</label>
+                                    <div class="form-group input-group">
+                                        {{ type_form.para_groove_height }}
+                                        <span class="input-group-addon">±</span>
+                                        {{ type_form.para_groove_height_tolerance }}
+                                    </div>
+                                    <p class="help-block">Input the value of groove height</p>
+                                </div>
+                                <div class="col-lg-6">
+                                    <img src="/static/pic/Section_1.JPG" alt="Section Type 1"  height="395">
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    <!--</div>-->
+
+{% endblock %}

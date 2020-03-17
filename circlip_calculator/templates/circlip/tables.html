@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div id="page-wrapper" style="min-height: 1088px;">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Task States and Results</h1>
+            </div>
+        </div>
+        <table class="alt" id="dataTables" width="100%">
+            <thead>
+            <tr>
+                <th>Circlip Inner Diameters</th>
+                <th>Tooling Diameters</th>
+                <th>Circlip Width</th>
+                <th>Circlip Thickness</th>
+                <th>Circlip Max von Mises Stress</th>
+                <th>Circlip Deformed Diameters</th>
+                <th>Report</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for data in database %}
+            <tr>
+                <th>{{ data.inner_diameters }}</th>
+                <th>{{ data.tooling_diameters }}</th>
+                <th>{{ data.circlip_width }}</th>
+                <th>{{ data.circlip_thickness }}</th>
+                <th>{{ data.circlip_mises}}</th>
+                <th>{{ data.circlip_deformed_diameters}}</th>
+                <th><a href={{ data.id }}>Detail</a></th>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
+
+{% block javascript %}
+{% endblock %}

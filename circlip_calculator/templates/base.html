@@ -1,0 +1,309 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>CAE Automation Tools Platform</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!--[if lte IE 8]><script src="/static/assets/js/ie/html5shiv.js"></script><![endif]-->
+		<!-- Bootstrap Core CSS -->
+        <!--Theme CSS-->
+		<!--<link href="/static/css/main.css" rel="stylesheet" type="text/css" rel="stylesheet">-->
+		<link rel="stylesheet" href="/static/assets/css/main.css" />
+		<!--[if lte IE 9]>&lt;!&ndash;&lt;!&ndash;<link rel="stylesheet" href="/static/assets/css/ie9.css" /><![endif]&ndash;&gt;&ndash;&gt;-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="/static/assets/css/ie8.css" /><![endif]-->
+
+		<!-- MetisMenu CSS -->
+		<link href="/static/vendor/metismenu/metismenu.min.css" rel="stylesheet">
+        <style>
+            #loading{width:100%; height: 100%;position: fixed;top:0;left: 0;z-index: 10001;background: #ffffff;}
+            #loading #pic{
+            width: 64px;
+            height: 64px;
+            /* background: url(images/loading.gif); */
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left:0;
+            right:0;
+            margin: auto}
+            #loading #pic i{
+                display: block;
+                float: left;
+                width: 6px;
+                height: 50px;
+                background: rgba(245, 106, 106, 1);
+                margin: 0 2px;
+                transform: scaleY(0.4);
+                animation: load 1.2s infinite;
+            }
+            #loading #pic i:nth-child(1){animation-delay:0.1s }
+            #loading #pic i:nth-child(2){animation-delay:0.2s }
+            #loading #pic i:nth-child(3){animation-delay:0.3s }
+            #loading #pic i:nth-child(4){animation-delay:0.4s}
+            #loading #pic i:nth-child(5){animation-delay:0.5s }
+            @keyframes load{
+                0%,40%,100%{transform: scaleY(0.4)}
+                20%{transform:scaleY(1) }
+            }
+        </style>
+		<!--&lt;!&ndash; datatables css &ndash;&gt;-->
+		{% block style %}
+		<!-- DataTables CSS -->
+		<!--<link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">-->
+		<!--<link href="/static/vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">-->
+		{% endblock %}
+	</head>
+	<body>
+
+	<div class="loading" id="loading">
+		<div class="pic" id="pic">
+			<i></i>
+			<i></i>
+			<i></i>
+			<i></i>
+			<i></i>
+		</div>
+	</div>
+		<!-- Wrapper -->
+			<div id="wrapper">
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							{% block content %}
+
+							<!-- Header -->
+								<header id="header">
+									<a href="index.html" class="logo"><strong>Editorial</strong> by HTML5 UP</a>
+									<ul class="icons">
+										<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+										<li><a href="#" class="icon fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+										<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="#" class="icon fa-medium"><span class="label">Medium</span></a></li>
+									</ul>
+								</header>
+
+							<!-- Banner -->
+								<section id="banner">
+									<div class="content">
+										<header>
+											<h1>Hi, I’m Editorial<br />
+											by HTML5 UP</h1>
+											<p>A free and fully responsive site template</p>
+										</header>
+										<p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. Pellentesque sapien ac quam. Lorem ipsum dolor sit nullam.</p>
+										<ul class="actions">
+											<li><a href="#" class="button big">Learn More</a></li>
+										</ul>
+									</div>
+									<span class="image object">
+										<img src="images/pic10.jpg" alt="" />
+									</span>
+								</section>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Erat lacinia</h2>
+									</header>
+									<div class="features">
+										<article>
+											<span class="icon fa-diamond"></span>
+											<div class="content">
+												<h3>Portitor ullamcorper</h3>
+												<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+											</div>
+										</article>
+										<article>
+											<span class="icon fa-paper-plane"></span>
+											<div class="content">
+												<h3>Sapien veroeros</h3>
+												<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+											</div>
+										</article>
+										<article>
+											<span class="icon fa-rocket"></span>
+											<div class="content">
+												<h3>Quam lorem ipsum</h3>
+												<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+											</div>
+										</article>
+										<article>
+											<span class="icon fa-signal"></span>
+											<div class="content">
+												<h3>Sed magna finibus</h3>
+												<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+											</div>
+										</article>
+									</div>
+								</section>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Ipsum sed dolor</h2>
+									</header>
+									<div class="posts">
+										<article>
+											<a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
+											<h3>Interdum aenean</h3>
+											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+											<ul class="actions">
+												<li><a href="#" class="button">More</a></li>
+											</ul>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/pic02.jpg" alt="" /></a>
+											<h3>Nulla amet dolore</h3>
+											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+											<ul class="actions">
+												<li><a href="#" class="button">More</a></li>
+											</ul>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/pic03.jpg" alt="" /></a>
+											<h3>Tempus ullamcorper</h3>
+											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+											<ul class="actions">
+												<li><a href="#" class="button">More</a></li>
+											</ul>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
+											<h3>Sed etiam facilis</h3>
+											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+											<ul class="actions">
+												<li><a href="#" class="button">More</a></li>
+											</ul>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/pic05.jpg" alt="" /></a>
+											<h3>Feugiat lorem aenean</h3>
+											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+											<ul class="actions">
+												<li><a href="#" class="button">More</a></li>
+											</ul>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/pic06.jpg" alt="" /></a>
+											<h3>Amet varius aliquam</h3>
+											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+											<ul class="actions">
+												<li><a href="#" class="button">More</a></li>
+											</ul>
+										</article>
+									</div>
+								</section>
+
+							{% endblock %}
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+
+							<!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<!--<li><a href="#">Homepage</a></li>-->
+										<!--<li><a href="generic.html">Generic</a></li>-->
+										<!--<li><a href="elements.html">Elements</a></li>-->
+										<!--<li>-->
+											<!--<span class="opener">Sealing Tools</span>-->
+											<!--<ul>-->
+												<!--<li><a href="../../sealing/forms/">Inputs</a></li>-->
+												<!--<li><a href="../../sealing/report/">Reports</a></li>-->
+											<!--</ul>-->
+										<!--</li>-->
+										<li>
+											<span class="opener">Circlip Tools</span>
+											<ul>
+												<li><a href="../../circlip/forms/">Inputs</a></li>
+												<li><a href="../../circlip/report/">Reports</a></li>
+											</ul>
+										</li>
+									</ul>
+								</nav>
+
+								<section>
+									<header class="major">
+										<h2>Get in touch</h2>
+									</header>
+									<p>If you have any question, please contact<br/>He Lvyang</p>
+									<ul class="contact">
+										<li class="fa-envelope-o"><a href="mailto:lvyang_he@patac.com.cn">lvyang_he@patac.com.cn</a></li>
+										<li class="fa-phone">(021) 50165016-593473</li>
+										<li class="fa-home">No.2199 Jufeng Road<br />
+										Pudong New Area, Shanghai</li>
+									</ul>
+								</section>
+
+							<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright">&copy; Untitled. All rights reserved. </p>
+								</footer>
+
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+            <script src="/static/vendor/jquery/jquery.min.js"></script>
+			<!--<script src="/static/assets/js/jquery.min.js"></script>-->
+			<script src="/static/assets/js/skel.min.js"></script>
+			<script src="/static/assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="/static/assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="/static/assets/js/main.js"></script>
+		<!-- Custom Theme JavaScript -->
+		<script src="/static/dist/js/sb-admin-2.js"></script>
+		<!-- DataTables JavaScript -->
+		<script src="/static/vendor/datatables/js/jquery.dataTables.min.js"></script>
+        {% block javascript %}
+		<script src="/static/vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+		<script src="/static/vendor/datatables-responsive/dataTables.responsive.js"></script>
+		{% endblock %}
+		<!-- Bootstrap Core JavaScript -->
+		<script src="/static/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+		<!-- Metis Menu Plugin JavaScript -->
+		<script src="/static/vendor/metisMenu/metisMenu.min.js"></script>
+
+		<script src="/static/jquery/jquery.min.js"></script>
+		<script>
+		$(document).ready(function(){
+          $("button").click(function(){
+            $(".loading").fadeIn();
+          });
+        });
+        </script>
+        <script>
+        document.onreadystatechange=function(){
+            console.log(document.readyState);
+            if(document.readyState=="complete"){
+                $(".loading").fadeOut();
+            }
+        }
+        </script>
+		<script>
+        $(document).ready(function() {
+            $('#dataTables').DataTable({
+                responsive: true,
+                "paging": true,
+                "pagingType": "numbers",
+                "dom": "<'row'<'9u 12u$(small)' <'1u' l>><'3u$ 12u$' f>>" + "<t>" + "<<'pagination' p><i>>",
+            });
+        });
+        </script>
+
+	</body>
+</html>

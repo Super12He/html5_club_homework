@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div id="page-wrapper" style="min-height: 1088px;">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Task States and Results</h1>
+            </div>
+        </div>
+        <table class="alt" id="dataTables" width="100%">
+            <thead>
+            <tr>
+                <th>Owner</th>
+                <th>Project</th>
+                <th>Phase</th>
+                <th>Analysis Objects</th>
+                <th>Version</th>
+                <th>Date</th>
+                <th>Report</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for data in database %}
+            <tr>
+                <th>{{ data.owner }}</th>
+                <th>{{ data.project }}</th>
+                <th>{{ data.phase }}</th>
+                <th>{{ data.analysis_objects}}</th>
+                <th>{{ data.version}}</th>
+                <th>{{ data.datetime}}</th>
+                <th><a href={{ data.id }}>{{ data.id }}</a></th>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
+
+{% block javascript %}
+{% endblock %}

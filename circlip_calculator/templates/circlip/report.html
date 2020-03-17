@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+<!--{% block css %}-->
+<!--<link href="/static/css/main.css" rel="stylesheet" type="text/css" rel="stylesheet">-->
+<!--{% endblock %}-->
+{% block style %}
+<link href="/static/vendor/bootstrap/css/bootstrap.min.user.css" rel="stylesheet">
+<!-- DataTables CSS -->
+<!--<link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">-->
+<!--<link href="/static/vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">-->
+<!--<link href="/static/css/main.css" rel="stylesheet" type="text/css" rel="stylesheet">-->
+{% endblock %}
+
+{% block content %}
+<div id="page-wrapper" style="min-height: 1088px">
+    <header class="major-user">
+        <span class="date" style="font-size:10pt">{{database.datetime}}</span>
+        <h2>Circlip Assembly Analysis - No.{{database.id}}</h2>
+    </header>
+    <hr style="border:1px double #eeeeee"/>
+    <div class="row">
+        <div class="col-lg-4">
+            <h2>Your Inputs:</h2>
+            <div class="col-lg-6">
+                <div>Inner Diameters:</div>
+                <div>Tooling Diameters:</div>
+                <div>Circlip Width</div>
+                <div>Circlip Thickness</div>
+            </div>
+            <div class="col-lg-6">
+                <div><b>{{database.inner_diameters}}</b> mm</div>
+                <div><b>{{database.tooling_diameters}}</b> mm</div>
+                <div><b>{{database.circlip_width}}</b> mm</div>
+                <div><b>{{database.circlip_thickness}}</b> mm</b></div>
+            </div>
+        </div>
+        <div class="col-lg-8">
+            <img src="/static/pic/kahuang.png" alt="Section Type 1"  height="295">
+        </div>
+    </div>
+	<hr style="border:1px double #eeeeee"/>
+    <h2>Results</h2>
+    <div class="row">
+        <div class="col-lg-3">
+            <h3>Contour</h3>
+            <img src="/static/pic/contour.gif" alt="Contour"  height="400">
+        </div>
+        <div class="col-lg-4">
+            <h3>Deformed Diameters - {{database.circlip_deformed_diameters}}mm</h3>
+            <img src="/static/pic/Deformation.png" alt="Deformation Error"  height="320">
+            <p class="help-block">
+                This error is calculated from 1000 test samples.</br>
+				The DEFORMATION mean error is <b>0.001257mm</b></br>
+                The DEFORMATION standard error(1 sigma) is <b>0.022107mm</b></br>
+            </p>
+        </div>
+        <div class="col-lg-4">
+            <h3>Max von Mises Stress - {{database.circlip_mises}}MPa</h3>
+            <img src="/static/pic/Stress.png" alt="Stress Error"  height="320">
+            <p class="help-block">
+                This error is calculated from 1000 test samples.</br>
+				The STRESS mean error is <b>0.436MPa</b></br>
+                The STRESS standard error(1 sigma) is <b>6.323MPa</b></br>
+            </p>
+        </div>
+    </div>
+    <hr style="border:1px double #eeeeee"/>
+    <hr style="border:1px double #eeeeee"/>
+</div>
+
+{% endblock %}

@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block style %}
+<link href="/static/vendor/bootstrap/css/bootstrap.min.user.css" rel="stylesheet">
+{% endblock %}
+{% block content %}
+    <!--<div id="page-wrapper">-->
+        <header id="header">
+            <p>
+                <strong>Created</strong> by He Lvyang
+            </p>
+        </header>
+        <h1>Circlip Calculator</h1>
+        <form action="#" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Geometroy Parameters
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <img src="/static/pic/kahuang.png" alt="Section Type 1"  height="395">
+                                </div>
+                                <div class="col-lg-4">
+                                    <label>Inner Diameters</label>
+                                    <div class="form-group input-group">
+                                        {{ form.inner_diameters }}
+                                    </div>
+                                    <p class="help-block">Input the value of circlip inner diameters</p>
+                                    <label>Tooling Diameters</label>
+                                    <div class="form-group input-group">
+                                        {{ form.tooling_diameters }}
+                                    </div>
+                                    <p class="help-block">Input the value of tooling diameters</p>
+                                </div>
+                                <div class="col-lg-4">
+                                    <label>Circlip Width</label>
+                                    <div class="form-group input-group">
+                                        {{ form.circlip_width }}
+                                    </div>
+                                    <p class="help-block">Input the value of circlip width</p>
+                                    <label>Tip Type</label>
+                                    <div class="form-group input-group">
+                                        <select name="tip_type" class="form-control" id="tip_type">
+                                            <option value=1 selected>1</option>
+                                            <option value=2>2</option>
+                                        </select>
+                                    </div>
+                                    <p class="help-block">Input the value of tip type</p>
+                                </div>
+                                <div class="col-lg-4">
+                                    <label>Circlip Thickness</label>
+                                    <div class="form-group input-group">
+                                        {{ form.circlip_thickness }}
+                                    </div>
+                                    <p class="help-block">Input the value of circlip thickness</p>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    <!--</div>-->
+
+{% endblock %}
+
+{% block javascript %}
+<script src="/static/vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+<script src="/static/vendor/datatables-responsive/dataTables.responsive.js"></script>
+{% endblock %}
